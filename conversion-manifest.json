@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "primary": {
+    "type": "line",
+    "mode": "demo",
+    "label": "LINEでサンプル案内",
+    "destination": null,
+    "productionReady": false,
+    "blockingReplacement": "本番用LINE公式アカウントの https://line.me / https://lin.ee / https://liff.line.me URL",
+    "flow": [
+      "友だち追加",
+      "悩みまたは知りたい項目を選択",
+      "おすすめの使い方・商品詳細を受け取る",
+      "購入ページまたは担当者へ進む"
+    ]
+  },
+  "secondary": {
+    "type": "anchor",
+    "label": "商品詳細を見る",
+    "destination": "#offer"
+  },
+  "placements": ["hero", "mid_formula", "offer", "line_flow", "closing", "sticky_dock"],
+  "previewDisclosure": "架空商品のため実際の友だち追加・購入・送信は行いません"
+}
