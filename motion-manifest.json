@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "defaultMode": "cinematic",
+  "modes": {
+    "static": {
+      "description": "静止画のみ。最軽量・JSなしでも成立"
+    },
+    "subtle": {
+      "description": "静止画を使った軽量な光・視差・スクロール演出"
+    },
+    "cinematic": {
+      "description": "Higgsfield動画をPC/SP別に配置する映像主導モード",
+      "hero": {
+        "provider": "higgsfield",
+        "desktopSrc": "assets/motion/hero-desktop.mp4",
+        "mobileSrc": "assets/motion/hero-mobile.mp4",
+        "poster": "assets/hero-desktop.png",
+        "mobilePoster": "assets/hero-mobile.png",
+        "available": true,
+        "provider": "higgsfield",
+        "model": "seedance_2_0",
+        "desktopJobId": "4476a7d6-ad15-4177-b400-80298fb69f6c",
+        "mobileJobId": "4c115435-5581-451d-b5b5-c047d40d981a"
+      },
+      "sections": [
+        {
+          "slot": "texture",
+          "src": "assets/motion/texture.mp4",
+          "poster": "assets/texture.png",
+          "available": false
+        },
+        {
+          "slot": "model",
+          "src": "assets/motion/model.mp4",
+          "poster": "assets/model.png",
+          "available": false
+        }
+      ]
+    }
+  },
+  "safeguards": {
+    "reducedMotion": "static",
+    "saveData": "static",
+    "javascriptOff": "static-content-visible",
+    "videoAudio": "muted",
+    "preload": "metadata"
+  },
+  "budgets": {
+    "heroDesktopMb": 5,
+    "heroMobileMb": 2.5,
+    "offscreenLazyLoad": true
+  }
+}
