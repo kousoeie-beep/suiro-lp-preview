@@ -5,3 +5,7 @@ references/lp-library/*-full.png
 references/lp-library/*-contact.jpg
 references/lp-library/candidate-tops.jpg
 references/lp-library/candidate-metrics.json
+variants/*/.gitignore
+variants/*/qa-*.png
+variants/*/qa-report.json
+variants/*/qa.mjs
