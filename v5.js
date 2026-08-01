@@ -23,4 +23,37 @@
   document.addEventListener('keydown',event=>{
     if(event.key==='Escape'&&modal?.open) close();
   });
+
+  const motionVideos=[...document.querySelectorAll('.motion-block video')];
+  const startVideo=async video=>{
+    const block=video.closest('.motion-block');
+    const playButton=block?.querySelector('.motion-play');
+    video.muted=true;
+    video.defaultMuted=true;
+    try{
+      await video.play();
+      if(playButton) playButton.hidden=true;
+    }catch{
+      if(playButton) playButton.hidden=false;
+    }
+  };
+  const observer='IntersectionObserver' in window?new IntersectionObserver(entries=>{
+    entries.forEach(entry=>{
+      const video=entry.target;
+      if(entry.isIntersecting) startVideo(video);
+      else video.pause();
+    });
+  },{rootMargin:'80% 0px',threshold:.01}):null;
+  motionVideos.forEach(video=>{
+    const block=video.closest('.motion-block');
+    const playButton=document.createElement('button');
+    playButton.type='button';
+    playButton.className='motion-play';
+    playButton.textContent='動画を再生';
+    playButton.hidden=true;
+    playButton.addEventListener('click',()=>startVideo(video));
+    block?.append(playButton);
+    if(observer) observer.observe(video);
+    else startVideo(video);
+  });
 })();
